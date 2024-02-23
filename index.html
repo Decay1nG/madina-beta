@@ -1,16 +1,20 @@
-<!doctype html>
-<html lang="ru">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">-->
     <title>Мадина</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
 <div class="programs__wrapper">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap);.programs__card--price,.programs__card--title,.programs__title{line-height:110%;text-align:center}*{padding:0;margin:0;border:0}*,:after,:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}:active,:focus,a:active,a:focus{outline:0}aside,footer,header,nav{display:block}body,html{height:100%;width:100%;font-size:100%;line-height:1;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%}button,input,textarea{font-family:inherit}input::-ms-clear{display:none}button{cursor:pointer}button::-moz-focus-inner{padding:0;border:0}a,a:hover,a:visited{text-decoration:none}ul li{list-style:none}img{vertical-align:top}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit}.programs__wrapper{font-family:Raleway,sans-serif;font-weight:300;box-sizing:border-box;font-size:.6944444444vw;max-width:390px;margin:0 auto;padding:0 20px}@media (max-width:1024px){.programs__wrapper{font-size:.9765625vw}}@media (max-width:576px){.programs__wrapper{font-size:2.5641025641vw}}.programs__title{font-weight:600;font-size:41px;text-wrap:nowrap}.programs{margin:20px 0;max-width:390px;display:flex;flex-direction:column;align-items:center}.programs__categories--list{margin:10px 0 30px;display:grid;grid-template:1fr/repeat(2,1fr);justify-items:center;align-items:center;gap:14px;width:350px}.programs__categories--item{text-align:center}.category__link{border-radius:11px;font-weight:400;font-size:15px;text-align:center;background-color:transparent;width:142px;height:46px;cursor:pointer;transition:background-color .2s;display:flex;justify-content:center;align-items:center}.category__link--active{background-color:#9afdfd;transition:background-color .2s}.programs__card{width:350px;padding:20px 14px;background-color:#eef9f9;border-radius:11px;display:none}.programs__card--active{display:block}.programs__card--duration{font-weight:600;font-size:16px;text-align:center;margin:20px 0}.programs__card--title{font-weight:600;font-size:34px}.programs__services--title{font-weight:400;font-size:1.5px;text-align:center}.programs__services--list h4,.programs__services--list li{font-weight:400;font-size:15px;margin-bottom:8px}.programs__card--favors{margin:6px 0 8px 17px}.programs__card--price{font-weight:600;font-size:34px;margin:20px 0}.programs__card--button{display:flex;justify-content:center;align-items:center;border-radius:11px;width:100%;height:80px;background:linear-gradient(135deg,#9aebfd 0,#00c7e2 100%);font-weight:600;font-size:16px;line-height:124%;letter-spacing:.04em;text-transform:uppercase;text-align:center;color:#05292e}.programs__card--description{margin-top:8px;font-weight:400;font-size:15px;text-align:center}
+    </style>
     <section class="programs">
         <h2 class="programs__title">Мои программы</h2>
         <ul class="programs__categories--list">
@@ -229,12 +233,12 @@
                 <li class="programs__services--item">6. Тонкое тело;</li>
                 <li class="programs__services--item">7. Энергетическое тело;</li>
                 <li class="programs__services--item">8. Родовые травмы;</li>
-                <li class="programs__services--item">9. Внутриутробная коррекция ;</li>
+                <li class="programs__services--item">9. Внутриутробная коррекция;</li>
                 <li class="programs__services--item">10. Родовые программы проклятье, порча, <br> сглаз, карма;</li>
                 <li class="programs__services--item">11. Деньги и сознание;</li>
                 <li class="programs__services--item">12. Денежный магнит;</li>
                 <li class="programs__services--item">13. Эгрегор изобилия;</li>
-                <li class="programs__services--item">14. Эгрегор отношении;;</li>
+                <li class="programs__services--item">14. Эгрегор отношения;</li>
                 <li class="programs__services--item">15. Благополучие;</li>
                 <li class="programs__services--item">16. Семья и любовь.</li>
             </ul>
@@ -242,7 +246,22 @@
             <a href="#" class="programs__card--button">записаться</a>
         </div>
     </section>
+    <script>
+        const programsButtons = document.querySelectorAll('.category__link'),
+            programsCards = document.querySelectorAll('.programs__card');
+        programsButtons.forEach((button, i) => {
+            button.addEventListener('click', (event) => {
+                programsButtons.forEach(item => {
+                    item.classList.remove("category__link--active");
+                });
+                button.classList.add('category__link--active');
+                programsCards.forEach(item => {
+                    item.classList.remove("programs__card--active");
+                });
+                programsCards[i].classList.add("programs__card--active");
+            });
+        });
+    </script>
 </div>
 
 </body>
-</html>
